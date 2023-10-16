@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "build:dev": "webpack-dev-server",
-    "build:prod": "webpack --config webpack.config.prod.js"
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack",
+    "build:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server",
+    "build:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config webpack.config.prod.js"
   },
   "author": "Maximilian Schwarzmueller",
   "license": "ISC",
@@ -17,5 +17,8 @@
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
   }
 }
