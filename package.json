@@ -5,20 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack",
-    "build:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server",
-    "build:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config webpack.config.prod.js"
+    "build": "webpack",
+    "build:dev": "webpack-dev-server",
+    "build:prod": "webpack --config webpack.config.prod.js"
   },
   "author": "Maximilian Schwarzmueller",
   "license": "ISC",
+  "browserslist": "> 0.2%, not dead",
   "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "eslint": "^6.4.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
-  },
-  "dependencies": {
-    "cross-env": "^7.0.3"
   }
 }
