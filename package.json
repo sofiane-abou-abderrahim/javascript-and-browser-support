@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "build:dev": "webpack-dev-server",
-    "build:prod": "webpack --config webpack.config.prod.js"
+    "build:dev": "set NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && webpack",
+    "build:prod": "set NODE_OPTIONS=--openssl-legacy-provider &&webpack --config webpack.config.prod.js"
   },
   "author": "Maximilian Schwarzmueller",
   "license": "ISC",
-  "browserslist": "> 0.2%, not dead",
+  "browserslist": "> 0.3%, not dead",
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
@@ -21,5 +21,9 @@
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
+  },
+  "dependencies": {
+    "core-js": "^3.2.1",
+    "regenerator-runtime": "^0.13.3"
   }
 }
